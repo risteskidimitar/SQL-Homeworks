@@ -14,7 +14,7 @@ Select * from dbo.Student where LastName like 'T%'
 
 --Find all Students Enrolled in January/1998
 --Select * from dbo.Student where EnrolledDate > '1997-12-31' and EnrolledDate < '1998-02-01'
-Select * from dbo.Student where EnrolledDate between '1997-12-31' and '1998-02-01'
+Select * from dbo.Student where EnrolledDate between '1998-01-01' and '1998-01-31'
 
 --Find all Students with LastName starting With ‘J’ enrolled in January/1998
 Select * from dbo.Student where LastName like 'J%' and EnrolledDate > '1997-12-31' and EnrolledDate < '1998-02-01'
@@ -72,10 +72,10 @@ inner join dbo.Teacher t on g.TeacherID = t.ID
 --List all Teachers without exam Grade
 Select distinct t.FirstName as Teacher from dbo.Teacher t
 left join dbo.Grade g on t.ID = g.TeacherID
-where g.Grade is null
+where g.StudentID is null
 
 --List all Students without exam Grade (using Right Join)
 
 Select distinct s.FirstName as Student from Grade g
 right join dbo.Student s on s.ID = g.StudentID
-where g.Grade is null
+where g.StudentID is null
