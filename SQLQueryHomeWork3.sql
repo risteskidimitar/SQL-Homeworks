@@ -101,3 +101,17 @@ group by s.FirstName, s.LastName
 
 
 select * from vv_StudentGradeDetails
+
+--Dali e dobar kako nachin so having da se iskoristi??
+
+--CREATE VIEW vv_StudentGradeDetails
+--AS
+--select s.FirstName as FirstName, s.LastName as LastName, count (a.[Name]) as PassedCourses 
+--from dbo.Student s
+--inner join dbo.Grade g on g.StudentID = s.ID
+--inner join dbo.Course c on c.ID = g.CourseID
+--inner join dbo.GradeDetails gd on gd.GradeID = g.ID
+--inner join dbo.AchievementType a on gd.AchievementTypeID = a.ID
+
+--group by s.FirstName, s.LastName, a.[Name]
+--having a.[Name] = 'Ispit'
