@@ -45,5 +45,6 @@ group by a.[Name]
 end
 
 go
-select * from dbo.GradeDetails
+
+--select * from dbo.GradeDetails
 exec dbo.CreateGradeDetail @GradeId = '1', @AchievementTypeID = '1', @Points = '99', @MaxPoints = '100', @Date = '2020-08-19'
