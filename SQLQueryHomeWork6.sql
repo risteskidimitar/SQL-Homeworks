@@ -11,11 +11,9 @@ as
 begin
 insert into dbo.Grade ([StudentID],[CourseID],[TeacherID],[Grade],[Comment],[CreatedDate])
 values (@StudentId, @CourseID, @TeacherId, @Grade, @Comment, @CreatedDate )
-
 select count(Grade) as TotalNumberOfGrades
 from dbo.Grade
 where StudentID = @StudentId
-
 select max (Grade) as MAXGrade
 from dbo.Grade
 where StudentID = @StudentId and TeacherID = @TeacherId
